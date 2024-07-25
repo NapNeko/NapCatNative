@@ -23,5 +23,5 @@ namespace Util
 {
     void GetCurrentProgramMainAddress();
 }
-template <typename T>
-std::tuple<bool, T> GetAddressBySymbol(const char *symbol);
+// template <typename T>
+// std::tuple<bool, T> GetAddressBySymbol(const char *symbol);

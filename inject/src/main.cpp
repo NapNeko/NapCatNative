@@ -1,4 +1,5 @@
 #include <tuple>
+#include <iostream>
 #include "hook.win.h"
 
 /**
@@ -24,6 +25,13 @@ extern "C" int NapCat_Main()
 extern "C" int ReStudio()
 {
     return 0;
+}
+
+template <typename T>
+std::tuple<boolean, T> GetAddressBySymbol(const char *symbol)
+{
+    FARPROC func_ptr = GetProcAddress(GetModuleHandle(NULL), symbol);
+    return std::make_tuple(func_ptr != NULL, reinterpret_cast<T>(func_ptr));
 }
 
 void LoadSymFunc()
