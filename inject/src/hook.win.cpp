@@ -1,3 +1,5 @@
+#include <Windows.h>
+
 namespace InlineHookAmd64
 {
     /**
@@ -21,11 +23,21 @@ namespace InlineHookAmd64
         // E8 XX XX XX XX call xxxxxxxx 5 bytes
         return;
     }
-    void SearchWhiteSpace() {
-        //搜索空间空闲地址
+    void SearchWhiteSpace()
+    {
+        // 搜索空间空闲地址
     }
-    void FixBigJmp(){
+    void FixBigJmp()
+    {
         // 尝试解析汇编 拷贝12字节以上到新地址 拷贝完成后在原始插入12字节跳转到新地址 新地址增加回跳代码
     }
-    void
+    void ParseCall(void *e8_ptr) {
+
+    }
+}
+namespace Util{
+    void GetCurrentProgramMainAddress(){
+        // 获取当前程序入口地址
+        //GetModuleHandle(NULL);
+    }
 }
